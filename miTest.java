@@ -7,12 +7,42 @@ import org.openqa.selenium.Keys;
 
 
 public class miTest {
-    //Firefox
     WebDriver driver= new FirefoxDriver();
     @Test
     public void verificar(){
         //Go to the Google page
         driver.navigate().to("https://www.google.com/");
+        
+        //Type in Google’s search “Focus Services
+        driver.findElement(By.name("q")).sendKeys("Focus services");
+        
+        //Click on “Search button”
+        driver.findElement(By.xpath("/html/body/div/div[3]/form/div[2]/div/div[3]/center/input[1]")).click();
+        
+        //Verify the https://www.focusservices.com URL exists in the results
+        assertTrue(isTextPresent("https://www.focusservices.com/"));
 
+        //Click on Focus Services – Beyond Expectations hyperlink
+        
+        //Verify the “Now Hiring!” button exists into this page
+        
+        //Click on “Careers” Tab 
+        
+        //Locate Keywords field. Type “inbound” word. Enter this search. 
+        
+        //Click on the second register found
+        
+        //Verify this record have job’s description
+	}
+	//verify
+	public boolean isTextPresent(String text){
+        try{
+            boolean b = driver.getPageSource().contains(text);
+            return b;
+        }
+        catch(Exception e){
+            return false;
+        }
+    }
 }
 
