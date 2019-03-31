@@ -32,10 +32,17 @@ public class miTest {
         driver.findElement(By.linkText("Careers")).click();
         
         //Locate Keywords field. Type “inbound” word. Enter this search. 
-        
+        driver.findElement(By.id("search_keywords")).sendKeys("inbound");
+        driver.findElement(By.id("search_keywords")).sendKeys(Keys.RETURN);
+
         //Click on the second register found
-        
+        driver.findElement(By.cssSelector("li.job_listing:nth-child(20)")).click();
+
         //Verify this record have job’s description
+        assertTrue(isTextPresent("Job Description"));
+
+        driver.close();
+        
 	}
 	//verify
 	public boolean isTextPresent(String text){
