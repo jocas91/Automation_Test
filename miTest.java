@@ -23,10 +23,13 @@ public class miTest {
         assertTrue(isTextPresent("https://www.focusservices.com/"));
 
         //Click on Focus Services – Beyond Expectations hyperlink
-        
+        driver.findElement(By.cssSelector("div.g:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > h3:nth-child(1)")).click();
+
         //Verify the “Now Hiring!” button exists into this page
-        
+        assertTrue(isTextPresent("Now Hiring!"));
+
         //Click on “Careers” Tab 
+        driver.findElement(By.linkText("Careers")).click();
         
         //Locate Keywords field. Type “inbound” word. Enter this search. 
         
